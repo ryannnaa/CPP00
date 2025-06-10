@@ -70,7 +70,7 @@ void PhoneBook::displayContacts() const
         std::cout << std::right << std::setw(10) << i + 1 << "|"
         << std::right << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
         << std::right << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
-        << std::right << std::setw(10) << truncate(contacts[i].getNickname()) << std::endl;
+        << std::right << std::setw(10) << truncate(contacts[i].getNickname()) << "|" << std::endl;
     }
     do
     {
@@ -78,7 +78,7 @@ void PhoneBook::displayContacts() const
         std::getline(std::cin, input);
         if (input.size() == 1 && input[0] >= '1' && input[0] <= '8')
         {
-            index = input[0];
+            index = input[0] - '0';
             displayContactDetails(index -1);
             break;
         }
@@ -89,7 +89,7 @@ void PhoneBook::displayContacts() const
 
 void PhoneBook::displayContactDetails(int index) const
 {
-    if (index > 0 && index <= 8 && index <= count)
+    if (index >= 0 && index < count)
         contacts[index].displayFullInfo();
     else
         std::cerr << "Invalid index, please indicate a number from 1 to 8" << std::endl;
