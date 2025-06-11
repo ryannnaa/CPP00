@@ -68,9 +68,9 @@ void PhoneBook::displayContacts() const
     for (int i = 0; i < count; i++)
     {
         std::cout << std::right << std::setw(10) << i + 1 << "|"
-        << std::right << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
-        << std::right << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
-        << std::right << std::setw(10) << truncate(contacts[i].getNickname()) << "|" << std::endl;
+            << std::right << std::setw(10) << truncate(contacts[i].getFirstName()) << "|"
+            << std::right << std::setw(10) << truncate(contacts[i].getLastName()) << "|"
+            << std::right << std::setw(10) << truncate(contacts[i].getNickname()) << "|" << std::endl;
     }
     do
     {
